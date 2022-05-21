@@ -4,84 +4,61 @@ import java.time.*;
 
 public class Basic {
 
-    static String flipcoin() {
 
-        double a = Math.random();
 
-        if(a< 0.5) {
-            return"tails";
-        }else
-            return"head";
-    }
+    public static void swap() {
 
-    static void primefactor(){
-        int n;
+        int x, y, t;
         Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        for(int i = 2; i< n; i++) {
-            while(n % i == 0) {
-                System.out.println(i + " ");
-                n = n/i;
-            }
-            if(n > 2) {
-                System.out.println(n);
-            }
+        System.out.println("enter first number");
+        x = sc.nextInt();
+        System.out.println("enter second number");
+        y = sc.nextInt();
+
+        System.out.println("before swapping number" + x +" "+ y);
+        t = x;
+        x = y;
+        y = t;
+        System.out.println("after swapping the numbers are"+ x +" "+ y);
+
+
+    }
+    static	void checkevenodd() {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the number");
+        int x = sc.nextInt();
+        if(x % 2 == 0) {
+            System.out.println("the number is even");
         }
-
-
+        else
+            System.out.println("the number is odd");
     }
 
 
 
-    public static void main(String[] args)
-    {
 
-        System.out.println("1 for print head and tails");
-        System.out.println("2 for factorial");
+    public static void main(String[] args) {
+        System.out.println("1 : swapping number");
+        System.out.println("2 : get even or odd");
 
+        Scanner sc = new Scanner(System.in);
 
-        Scanner option = new Scanner(System.in);
+        int	option = sc.nextInt();
 
-        int a = option.nextInt();
+        switch(option) {
 
-        switch(a)
-        {
             case 1:
-
-                Basic t = new Basic();
-                int heads = 0;
-                int tails = 0;
-                int chances = 10;
-                for(int i = 1; i<=chances; i++) {
-                    if(t.flipcoin().equals("tails")) {
-                        tails++;
-                    } else
-                        heads++;
-
-                }
-                System.out.println("Chances "+ chances);
-                System.out.println("heads " + heads);
-                System.out.println("tails : "+ tails);
-
-
-                float  percentage_head = heads*(100/chances);
-                System.out.println("heads " + percentage_head+ "%");
-
-                float percentage_tails = tails*(100/chances);
-                System.out.println("tails " + percentage_tails+ "%");
-                break;
-
-
+                swap();
             case 2:
-                System.out.println("enter the number");
-                primefactor();
-
+                checkevenodd();
 
         }
+
     }
 
 
-    // TODO Auto-generated method stub
+
 
 }
 
