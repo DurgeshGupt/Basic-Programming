@@ -1,64 +1,27 @@
 package basic;
 import java.util.Scanner;
-import java.time.*;
 
-public class Basic {
-
-
-
-    public static void swap() {
-
-        int x, y, t;
-        Scanner sc = new Scanner(System.in);
-        System.out.println("enter first number");
-        x = sc.nextInt();
-        System.out.println("enter second number");
-        y = sc.nextInt();
-
-        System.out.println("before swapping number" + x +" "+ y);
-        t = x;
-        x = y;
-        y = t;
-        System.out.println("after swapping the numbers are"+ x +" "+ y);
-
-
-    }
-    static	void checkevenodd() {
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("enter the number");
-        int x = sc.nextInt();
-        if(x % 2 == 0) {
-            System.out.println("the number is even");
-        }
-        else
-            System.out.println("the number is odd");
-    }
-
-
-
+public class Basic{
 
     public static void main(String[] args) {
-        System.out.println("1 : swapping number");
-        System.out.println("2 : get even or odd");
-
         Scanner sc = new Scanner(System.in);
+        System.out.println("largest among three number");
 
-        int	option = sc.nextInt();
+        System.out.println("Enter first number");
+        int a = sc.nextInt();
 
-        switch(option) {
+        System.out.println("Enter Second number");
+        int b = sc.nextInt();
 
-            case 1:
-                swap();
-            case 2:
-                checkevenodd();
+        System.out.println("enter third number");
+        int c = sc.nextInt();
 
-        }
+        int temp = (a > b) ? a : b;
+
+        int largest = (temp > c) ? temp : c;
+
+        System.out.println("The largest number is " + largest);
+
 
     }
-
-
-
-
 }
-
